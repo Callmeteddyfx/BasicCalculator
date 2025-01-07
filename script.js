@@ -17,13 +17,14 @@ document.getElementById('AC').addEventListener('click', function(){
 // Select all elements with the class 'btns'
 const clickableElements = document.querySelectorAll('.btns');
 const preview = document.getElementById('preview');
-const ans = `${eval(`${preview.textContent}`)}`;
+//const ans = `${eval(`${preview.textContent}`)}`;
 
-// Add click event listener to each btn element
+// Adding click event listener to each btn element
 clickableElements.forEach(element => {
     element.addEventListener('click', function() {
+        document.getElementById('answer').textContent = '';
         preview.textContent += this.textContent;
-        if (ans.length > 10 || preview.textContent.length > 11) {
+        if (preview.textContent.length > 20) {
             preview.textContent = ''
         } 
     });
@@ -34,9 +35,10 @@ document.getElementById('equal').addEventListener('click', function(){
     const answer = document.getElementById('answer');
     const ans = `${eval(`${preview.textContent}`)}`
 
-     if (ans.length > 10 || preview.textContent.length > 10) {
+     if (preview.textContent.length > 10) {
+        //ans.length > 20 || 
         //answer.textContent = 'OverLoad'
-        preview.textContent = ''
+        preview.textContent = '';
     } else {
         negate = null;
         try{
@@ -45,6 +47,7 @@ document.getElementById('equal').addEventListener('click', function(){
     catch (error) {
         answer.textContent = 'Error';
     }};
+    preview.textContent = '';
 });
 
 document.getElementById('neg').addEventListener('click', function(){
