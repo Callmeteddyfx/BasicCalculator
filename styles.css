@@ -76,11 +76,12 @@ html,body{
     overflow: hidden;
 }
 
-.btns:active, .funcbtns:active {
+.btns:active, .funcbtns:active, #AC:active, #C:active, #neg:active {
     background-color: #b0b0b0;
 }
 
 .btns,.funcbtns{
+    cursor: pointer;
     -webkit-text-fill-color: var(--btn-text-colour);
     background-color: var(--btn-color);
     font-family: "Work Sans", serif;

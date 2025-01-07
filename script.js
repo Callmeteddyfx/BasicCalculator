@@ -8,7 +8,9 @@ let negate = null;
 document.getElementById('AC').addEventListener('click', function(){
         const preview = document.getElementById('preview')
         let answer = document.getElementById('answer')
+        const neg = document.getElementById('neg');
 
+        neg.textContent = `+/-`
         preview.textContent = ' ';
         answer.textContent = ' ';
         negate = null;
@@ -34,13 +36,16 @@ document.getElementById('equal').addEventListener('click', function(){
     const preview = document.getElementById('preview');
     const answer = document.getElementById('answer');
     const ans = `${eval(`${preview.textContent}`)}`
-
+    const neg = document.getElementById('neg');
+        
+    //neg.textContent = `+/-`
      if (preview.textContent.length > 10) {
         //ans.length > 20 || 
         //answer.textContent = 'OverLoad'
         preview.textContent = '';
     } else {
         negate = null;
+        neg.textContent = `+/-`
         try{
         answer.textContent = eval(`${preview.textContent}`);
     }
@@ -69,7 +74,7 @@ document.getElementById('neg').addEventListener('click', function(){
 document.getElementById('C').addEventListener('click', function(){
     const preview = document.getElementById('preview');
     const text = preview.textContent;
-
+    
     preview.textContent = text.slice(0, -1);
 });
 
