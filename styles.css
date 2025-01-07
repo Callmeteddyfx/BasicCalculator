@@ -1,0 +1,108 @@
+:root{
+    --background-color: #f6f6f6;
+    --preview-color: #000000;
+    --btn-color: #f0f0f0;
+    --btn-text-colour: black;
+    --btn-color2: var(--btn-color);
+    --btn-color3: var(--btn-color);
+}
+@media(prefers-color-scheme: dark){
+    :root{
+    --background-color: #000;
+    --preview-color: #fff;
+    --btn-text-colour: white;
+    --btn-text-colour2: #000000;
+    --btn-color: #373737;
+    --btn-color2: #cacaca;
+    --btn-color3: #59f400;
+    }
+
+}
+
+html,body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+#wrapper{
+    background-color: var(--background-color);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+#maincontainer{
+    background-color: var(--background-color);
+    flex: 1.5;
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+
+#buttonscontainer{
+    margin: 5px;
+    padding: 0;
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    width: 95%;
+}
+
+#preview,#answer{
+    -webkit-text-fill-color: var(--preview-color);
+    padding-left: 10px;
+    margin: 5px;
+    font-family: "Work Sans", serif;
+    font-size: 50px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btns,.funcbtns{
+    -webkit-text-fill-color: var(--btn-text-colour);
+    background-color: var(--btn-color);
+    font-family: "Work Sans", serif;
+    font-size: 40px;
+    border-radius: 360px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#AC, #C, #neg{
+    -webkit-text-fill-color: var(--btn-text-colour2);
+    background-color: var(--btn-color2);
+}
+
+#mathbtn,#equal{
+    -webkit-text-fill-color: var(--btn-text-colour);
+    background-color: var(--btn-color3);
+}
+
+
+@media (max-width: 768px) {
+    #preview,#answer{
+        width: auto;
+        word-break: break-word;
+    }
+  }
+  
